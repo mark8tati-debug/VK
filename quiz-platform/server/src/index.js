@@ -1,5 +1,7 @@
 import "dotenv/config";
 import http from "http";
+import path from "path";
+import { fileURLToPath } from "url";
 import express from "express";
 import cors from "cors";
 import { Server } from "socket.io";
@@ -7,7 +9,10 @@ import { PrismaClient } from "@prisma/client";
 import authRoutes from "./routes/auth.js";
 import quizRoutes from "./routes/quizzes.js";
 import sessionRoutes from "./routes/sessions.js";
+import uploadRoutes from "./routes/uploads.js";
 import { registerSocketHandlers } from "./socket/handlers.js";
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const prisma = new PrismaClient();
 const app = express();
@@ -22,8 +27,11 @@ app.use(express.json());
 app.set("prisma", prisma);
 app.set("io", io);
 
+app.use("/uploads", express.static(path.join(__dirname, "../uploads")));
+
 app.get("/api/health", (_req, res) => res.json({ ok: true }));
 app.use("/api/auth", authRoutes);
+app.use("/api/uploads", uploadRoutes);
 app.use("/api/quizzes", quizRoutes);
 app.use("/api/sessions", sessionRoutes);
 

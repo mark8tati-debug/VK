@@ -31,15 +31,26 @@ export default function Dashboard() {
     nav(`/host/${s.id}`);
   }
 
+  async function removeQuiz(quizId, title) {
+    if (!confirm(`Удалить квиз «${title}»? Все вопросы и сессии будут удалены.`)) return;
+    try {
+      await quizzes.remove(quizId);
+      setList((prev) => prev.filter((q) => q.id !== quizId));
+    } catch (ex) {
+      alert(ex.message);
+    }
+  }
+
   return (
     <Layout title="Мои квизы" action={<button className="btn btn-primary" onClick={createQuiz}>+ Новый квиз</button>}>
       {list.map((q) => (
         <div className="card" key={q.id}>
           <h3>{q.title}</h3>
           <p style={{ color: "var(--muted)" }}>{q.questions?.length || 0} вопросов</p>
-          <div style={{ display: "flex", gap: 8, marginTop: 12 }}>
+          <div style={{ display: "flex", gap: 8, marginTop: 12, flexWrap: "wrap" }}>
             <Link to={`/quiz/${q.id}/edit`} className="btn btn-secondary">Редактор</Link>
             <button className="btn btn-primary" onClick={() => launch(q.id)}>Запустить</button>
+            <button className="btn btn-danger" onClick={() => removeQuiz(q.id, q.title)}>Удалить</button>
           </div>
         </div>
       ))}

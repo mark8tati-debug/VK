@@ -61,6 +61,9 @@ export default function HostSession() {
           <>
             <p>Вопрос {idx + 1} из {total}</p>
             <h2>{q.text}</h2>
+            {q.imageUrl && (
+              <img src={q.imageUrl} alt="" style={{ maxWidth: "100%", maxHeight: 320, borderRadius: 8, marginTop: 12 }} />
+            )}
           </>
         ) : (
           <p>Нажмите «Следующий вопрос», чтобы показать задание участникам</p>

@@ -20,11 +20,27 @@ export const auth = {
   login: (body) => api("/auth/login", { method: "POST", body: JSON.stringify(body) }),
 };
 
+export async function uploadImage(file) {
+  const token = localStorage.getItem("token");
+  const form = new FormData();
+  form.append("image", file);
+  const res = await fetch(`${API}/uploads`, {
+    method: "POST",
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+    body: form,
+  });
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) throw new Error(data.error || "Ошибка загрузки изображения");
+  return data.url;
+}
+
 export const quizzes = {
   list: () => api("/quizzes"),
   create: (body) => api("/quizzes", { method: "POST", body: JSON.stringify(body) }),
   get: (id) => api(`/quizzes/${id}`),
+  update: (id, body) => api(`/quizzes/${id}`, { method: "PATCH", body: JSON.stringify(body) }),
   addQuestion: (id, body) => api(`/quizzes/${id}/questions`, { method: "POST", body: JSON.stringify(body) }),
+  remove: (id) => api(`/quizzes/${id}`, { method: "DELETE" }),
 };
 
 export const sessions = {
