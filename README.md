@@ -8,6 +8,7 @@ MVP платформы для проведения квизов в реальн�
 |----------|-----|
 | Макеты Figma | https://www.figma.com/design/bowNce537o2YiRGUxFzpAH |
 | Пояснительная записка | [docs/POYASNITELNAYA_ZAPISKA.md](docs/POYASNITELNAYA_ZAPISKA.md) |
+| Репозиторий | https://github.com/mark8tati-debug/VK |
 | Код приложения | [quiz-platform/](quiz-platform/) |
 
 ## Быстрый старт

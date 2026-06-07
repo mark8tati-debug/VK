@@ -13,7 +13,7 @@
 | Артефакт | Ссылка |
 |----------|--------|
 | Макеты UI (Figma) | https://www.figma.com/design/bowNce537o2YiRGUxFzpAH |
-| Репозиторий | https://github.com/ВАШ_АККАУНТ/quiz-platform |
+| Репозиторий | https://github.com/mark8tati-debug/VK |
 | Демо (опционально) | *(указать после деплоя)* |
 
 ---
