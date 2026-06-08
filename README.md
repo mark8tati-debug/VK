@@ -6,7 +6,7 @@ MVP платформы для проведения квизов в реальн�
 
 | Артефакт | URL |
 |----------|-----|
-| Макеты Figma | https://www.figma.com/design/bowNce537o2YiRGUxFzpAH |
+| Макеты Figma | https://www.figma.com/design/bowNce537o2YiRGUxFzpAH/%D0%9A%D0%B2%D0%B8%D0%B7%D1%8B?node-id=19-2&t=7KKZVgCaFoJHt23K-1 |
 | Пояснительная записка | [docs/POYASNITELNAYA_ZAPISKA.md](docs/POYASNITELNAYA_ZAPISKA.md) |
 | Репозиторий | https://github.com/mark8tati-debug/VK |
 | Код приложения | [quiz-platform/](quiz-platform/) |

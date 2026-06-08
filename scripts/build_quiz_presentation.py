@@ -28,7 +28,7 @@ C_MUTED = RGBColor(0x5C, 0x67, 0x7A)
 C_SUCCESS = RGBColor(0x2E, 0xB8, 0x73)
 C_HIGHLIGHT = RGBColor(0xF0, 0xEE, 0xFF)
 
-FIGMA_URL = "https://www.figma.com/design/bowNce537o2YiRGUxFzpAH"
+FIGMA_URL = "https://www.figma.com/design/bowNce537o2YiRGUxFzpAH/%D0%9A%D0%B2%D0%B8%D0%B7%D1%8B?node-id=19-2&t=7KKZVgCaFoJHt23K-1"
 REPO_URL = "https://github.com/mark8tati-debug/VK"
 DEMO_URL = "http://localhost:5173 (локальный запуск)"
 
